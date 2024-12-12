@@ -5,15 +5,15 @@ import { Playlist } from './Playlist';
 import './App.css';
 
 function App() {
-// Hardcoded playlist data for testing
-  const [playlist, setPlaylist] = useState ([
+  // Hardcoded playlist data for testing
+  const [playlist, setPlaylist] = useState({
     name: 'My Playlist',
     tracks: [
       { id: 1, name: 'Track 1', artist: 'Artist 1', album: 'Album 1' },
       { id: 2, name: 'Track 2', artist: 'Artist 2', album: 'Album 2' },
       { id: 3, name: 'Track 3', artist: 'Artist 3', album: 'Album 3' },
     ]
-  ]);
+  });
 
   // Hardcoded search results (simulating API response)
   const [searchResults, setSearchResults] = useState([
@@ -24,7 +24,6 @@ function App() {
 
   // Method to add a track to the playlist if it's not already there
   const addTrackToPlaylist = (track) => {
-    // Check if the track is already in the playlist by matching the id
     if (!playlist.tracks.some(existingTrack => existingTrack.id === track.id)) {
       setPlaylist(prevPlaylist => ({
         ...prevPlaylist,
@@ -33,13 +32,21 @@ function App() {
     }
   };
 
+  // Method to remove a track from the playlist
+  const removeTrackFromPlaylist = (track) => {
+    setPlaylist(prevPlaylist => ({
+      ...prevPlaylist,
+      tracks: prevPlaylist.tracks.filter(existingTrack => existingTrack.id !== track.id)
+    }));
+  };
+
   return (
     <div className="App">
       <h1>Jammming</h1>
       <SearchBar />
       <div className="App-content">
         <SearchResults searchResults={searchResults} addTrackToPlaylist={addTrackToPlaylist} />
-        <Playlist playlist={playlist} setPlaylist={setPlaylist} />
+        <Playlist playlist={playlist} removeTrackFromPlaylist={removeTrackFromPlaylist} />
       </div>
     </div>
   );

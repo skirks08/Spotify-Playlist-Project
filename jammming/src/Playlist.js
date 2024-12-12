@@ -2,7 +2,7 @@ import React from 'react';
 import { Tracklist } from './Tracklist';
 import './Playlist.css';
 
-export function Playlist({ playlist }) {
+export function Playlist({ playlist, removeTrackFromPlaylist }) {
 
   const [playlistName, setPlaylistName] = useState(playlist.name);
 
@@ -17,7 +17,7 @@ export function Playlist({ playlist }) {
   return (
     <div className="Playlist">
       <input value={playlist.name} readOnly />
-      <Tracklist tracks={playlist.tracks} />
+      <Tracklist tracks={playlist.tracks} removeTrackFromPlaylist={removeTrackFromPlaylist} />
       <button className="SaveButton">Save To Spotify</button>
     </div>
   );
