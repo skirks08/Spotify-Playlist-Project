@@ -5,12 +5,15 @@ import { Playlist } from './Playlist';
 import './App.css';
 
 function App() {
-// Hardcoded array of track objects
-  const [tracks] = useState ([
-    { id: 1, name: 'Track 1', artist: 'Artist 1', album: 'Album 1' },
-    { id: 2, name: 'Track 2', artist: 'Artist 2', album: 'Album 2' },
-    { id: 3, name: 'Track 3', artist: 'Artist 3', album: 'Album 3' },
-    { id: 4, name: 'Track 4', artist: 'Artist 4', album: 'Album 4' },
+// Hardcoded playlist data for testing
+
+  const [playlist, setPlaylist] = useState ([
+    name: 'My Playlist',
+    tracks: [
+      { id: 1, name: 'Track 1', artist: 'Artist 1', album: 'Album 1' },
+      { id: 2, name: 'Track 2', artist: 'Artist 2', album: 'Album 2' },
+      { id: 3, name: 'Track 3', artist: 'Artist 3', album: 'Album 3' },
+    ]
   ]);
 
   return (
@@ -19,7 +22,7 @@ function App() {
       <SearchBar />
       <div className="App-content">
         <SearchResults tracks={tracks} />
-        <Playlist tracks={tracks} />
+        <Playlist tracks={tracks} playlist={playlist} setPlaylist={setPlaylist}/>
       </div>
     </div>
   );
