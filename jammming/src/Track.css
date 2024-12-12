@@ -1,0 +1,59 @@
+.Track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Track:hover {
+    background-color: #e8e8e8;
+  }
+  
+  /* Track information section */
+  .Track-information {
+    flex: 1;
+  }
+  
+  .Track-information h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .Track-information p {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Track action button */
+  .Track-action {
+    background-color: #1db954;  /* Spotify Green */
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .Track-action:hover {
+    background-color: #1ed760;
+    transform: scale(1.1);
+  }
+  
+  .Track-action:active {
+    background-color: #1aa34a;
+  }
