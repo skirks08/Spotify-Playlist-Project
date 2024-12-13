@@ -59,26 +59,27 @@ function App() {
 
   const savePlaylist = async () => {
     // Extract URIs from the playlist tracks
-    const trackUris = playlist.tracks.map((track) => track.uri);
+  const trackUris = playlist.tracks.map((track) => track.uri);
 
-    try {
-      await Spotify.savePlaylist(playlist.name, trackUris);
-      setPlaylist({ name: 'New Playlist', tracks: [] });
-      alert('Playlist saved to Spotify!');
-    } catch (error) {
-      console.error('Error saving playlist:', error);
-    }
+  if (trackUris.length === 0) {
+    alert("Your playlist is empty! Add tracks before saving.");
+    return;
+  }
 
-    console.log(`Saving playlist "${playlist.name}" with URIs:`, trackUris);
-
-    // Mock saving to Spotify and resetting the playlist
-    setPlaylist({
-      name: 'New Playlist',
-      tracks: [],
-    });
-
-    alert('Your playlist has been saved!');
-  };
+  try {
+    // Save the playlist using the Spotify API
+    await Spotify.savePlaylist(playlist.name, trackUris);
+    
+    // Reset the playlist upon successful save
+    setPlaylist({ name: 'New Playlist', tracks: [] });
+    alert('Your playlist has been saved to Spotify!');
+  } catch (error) {
+    // Log the error and notify the user
+    console.error('Error saving playlist:', error);
+    alert('There was an issue saving your playlist. Please try again.');
+  }
+  }
+    
 
   return (
     <div className="App">
