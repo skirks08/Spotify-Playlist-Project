@@ -2,22 +2,21 @@ import React from 'react';
 import { Tracklist } from './Tracklist';
 import './Playlist.css';
 
-export function Playlist({ playlist, removeTrackFromPlaylist }) {
+export function Playlist({ playlist, updatePlaylistName }) {
 
-  const [playlistName, setPlaylistName] = useState(playlist.name);
-
-  const handleNameChange = (e) => {
-    setPlaylistName(e.target.value);
-    setPlaylist({
-        ...playlist,
-        name: e.target.value,
-    });
+  const handleNameChange = (event) => {
+    updatePlaylistName(event.target.value);
   };
 
   return (
     <div className="Playlist">
-      <input value={playlist.name} readOnly />
-      <Tracklist tracks={playlist.tracks} removeTrackFromPlaylist={removeTrackFromPlaylist} />
+      {/* Editable input for the playlist name */}
+      <input
+        className="Playlist-name"
+        value={playlist.name}
+        onChange={handleNameChange}
+      />
+      <Tracklist tracks={playlist.tracks} />
       <button className="SaveButton">Save To Spotify</button>
     </div>
   );
