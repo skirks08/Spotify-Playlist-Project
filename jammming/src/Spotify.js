@@ -1,5 +1,5 @@
 const clientId = '3da6d518fbe54b3fbf81d70afe5c4a44'; // Spotify app's client ID
-const redirectUri = 'https://effective-space-telegram-69rpgj99xj5r25w9w-3000.app.github.dev/'; // app's redirect URI
+const redirectUri = 'http://localhost:3000/'; // app's redirect URI
 let accessToken;
 
 const Spotify = {
