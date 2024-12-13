@@ -54,6 +54,7 @@ function App() {
       ...prevPlaylist,
       name: newName,
     }));
+  }
 
   return (
     <div className="App">
