@@ -54,7 +54,22 @@ function App() {
       ...prevPlaylist,
       name: newName,
     }));
-  }
+  };
+
+  const savePlaylist = () => {
+    // Extract URIs from the playlist tracks
+    const trackUris = playlist.tracks.map((track) => track.uri);
+
+    console.log(`Saving playlist "${playlist.name}" with URIs:`, trackUris);
+
+    // Mock saving to Spotify and resetting the playlist
+    setPlaylist({
+      name: 'New Playlist',
+      tracks: [],
+    });
+
+    alert('Your playlist has been saved!');
+  };
 
   return (
     <div className="App">
