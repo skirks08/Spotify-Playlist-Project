@@ -48,6 +48,13 @@ function App() {
     }));
   };
 
+  // Method to update the playlist name
+  const updatePlaylistName = (newName) => {
+    setPlaylist((prevPlaylist) => ({
+      ...prevPlaylist,
+      name: newName,
+    }));
+
   return (
     <div className="App">
       <h1>Jammming</h1>
