@@ -82,7 +82,7 @@ function App() {
   return (
     <div className="App">
       <h1>Jammming</h1>
-      <SearchBar />
+      <SearchBar onSearch={search} />
       <div className="App-content">
         <SearchResults searchResults={searchResults} addTrackToPlaylist={addTrackToPlaylist} />
         <Playlist playlist={playlist} removeTrackFromPlaylist={removeTrackFromPlaylist} />
