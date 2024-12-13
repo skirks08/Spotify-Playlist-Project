@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, React } from 'react';
 import { SearchBar } from './SearchBar';
 import { SearchResults } from './SearchResults';
 import { Playlist } from './Playlist';
