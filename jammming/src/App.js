@@ -3,6 +3,7 @@ import { SearchBar } from './SearchBar';
 import { SearchResults } from './SearchResults';
 import { Playlist } from './Playlist';
 import './App.css';
+import Spotify from './Spotify';
 
 function App() {
   // Hardcoded array of track objects
@@ -82,7 +83,7 @@ function App() {
   return (
     <div className="App">
       <h1>Jammming</h1>
-      <SearchBar onSearch={search} />
+      <SearchBar onSearch={(term) => Spotify.search(term).then(setSearchResults)} />
       <div className="App-content">
         <SearchResults searchResults={searchResults} addTrackToPlaylist={addTrackToPlaylist} />
         <Playlist playlist={playlist} removeTrackFromPlaylist={removeTrackFromPlaylist} />

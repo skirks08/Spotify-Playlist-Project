@@ -24,4 +24,24 @@ export function SearchResults({ searchResults, addTrackToPlaylist }) {
       </div>
     </div>
   );
-}
+};
+
+export function Tracklist({ tracks, action }) {
+  return (
+    <div className="Tracklist">
+      {tracks.map((track) => (
+        <div className="Track" key={track.id}>
+          <div className="Track-information">
+            <h3>{track.name}</h3>
+            <p>{track.artist} | {track.album}</p>
+          </div>
+          {action && (
+            <button className="Track-action" onClick={() => action(track)}>
+              {action.label}
+            </button>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
