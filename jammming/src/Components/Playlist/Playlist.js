@@ -1,44 +1,30 @@
-import React from 'react';
-import { Tracklist } from '../Tracklist/Tracklist';
-import './Playlist.css';
+import React, { useCallback } from "react";
 
-export function Playlist({ playlist, updatePlaylistName, savePlaylist }) {
+import "./Playlist.css";
 
-  const handleNameChange = (event) => {
-    updatePlaylistName(event.target.value);
-  };
+import TrackList from "../TrackList/TrackList";
+
+const Playlist = (props) => {
+  const handleNameChange = useCallback(
+    (event) => {
+      props.onNameChange(event.target.value);
+    },
+    [props.onNameChange]
+  );
 
   return (
     <div className="Playlist">
-      <input
-        className="Playlist-name"
-        value={playlist.name}
-        onChange={handleNameChange}
+      <input onChange={handleNameChange} defaultValue={"New Playlist"} />
+      <TrackList
+        tracks={props.playlistTracks}
+        isRemoval={true}
+        onRemove={props.onRemove}
       />
-      <Tracklist tracks={playlist.tracks} />
-      <button className="SaveButton" onClick={savePlaylist}>
-        Save To Spotify
+      <button className="Playlist-save" onClick={props.onSave}>
+        SAVE TO SPOTIFY
       </button>
     </div>
   );
 };
 
-export function Tracklist ({ tracks, action }) {
-  return (
-    <div className="Tracklist">
-      {tracks.map((track) => (
-        <div className="Track" key={track.id}>
-          <div className="Track-information">
-            <h3>{track.name}</h3>
-            <p>{track.artist} | {track.album}</p>
-          </div>
-          {action && (
-            <button className="Track-action" onClick={() => action(track)}>
-              {action.label}
-            </button>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-};
+export default Playlist;
