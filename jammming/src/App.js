@@ -56,9 +56,17 @@ function App() {
     }));
   };
 
-  const savePlaylist = () => {
+  const savePlaylist = async () => {
     // Extract URIs from the playlist tracks
     const trackUris = playlist.tracks.map((track) => track.uri);
+
+    try {
+      await Spotify.savePlaylist(playlist.name, trackUris);
+      setPlaylist({ name: 'New Playlist', tracks: [] });
+      alert('Playlist saved to Spotify!');
+    } catch (error) {
+      console.error('Error saving playlist:', error);
+    }
 
     console.log(`Saving playlist "${playlist.name}" with URIs:`, trackUris);
 
