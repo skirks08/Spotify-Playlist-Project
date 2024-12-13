@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tracklist } from './Tracklist';
+import { Tracklist } from '../Tracklist/Tracklist';
 import './Playlist.css';
 
 export function Playlist({ playlist, updatePlaylistName, savePlaylist }) {
