@@ -1,5 +1,5 @@
-const clientId = 'YOUR_SPOTIFY_CLIENT_ID'; // Replace with your Spotify app's client ID
-const redirectUri = 'http://localhost:3000/'; // Replace with your app's redirect URI
+const clientId = 'YOUR_SPOTIFY_CLIENT_ID'; // Spotify app's client ID
+const redirectUri = 'http://localhost:3000/'; // app's redirect URI
 let accessToken;
 let expiresIn;
 
