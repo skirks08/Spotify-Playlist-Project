@@ -1,47 +1,16 @@
-import React from 'react';
-import { Tracklist } from '../Tracklist/Tracklist';
-import './SearchResults.css';
+import React from "react";
 
-export function SearchResults({ searchResults, addTrackToPlaylist }) {
+import "./SearchResults.css";
+
+import TrackList from "../TrackList/TrackList";
+
+const SearchResults = (props) => {
   return (
     <div className="SearchResults">
       <h2>Results</h2>
-      <div className="Tracklist">
-        {searchResults.map((track) => (
-          <div className="Track" key={track.id}>
-            <div className="Track-information">
-              <h3>{track.name}</h3>
-              <p>{track.artist} | {track.album}</p>
-            </div>
-            <button 
-              className="Track-action"
-              onClick={() => addTrackToPlaylist(track)}
-            >
-              +
-            </button>
-          </div>
-        ))}
-      </div>
+      <TrackList tracks={props.searchResults} onAdd={props.onAdd} />
     </div>
   );
 };
 
-export function Tracklist({ tracks, action }) {
-  return (
-    <div className="Tracklist">
-      {tracks.map((track) => (
-        <div className="Track" key={track.id}>
-          <div className="Track-information">
-            <h3>{track.name}</h3>
-            <p>{track.artist} | {track.album}</p>
-          </div>
-          {action && (
-            <button className="Track-action" onClick={() => action(track)}>
-              {action.label}
-            </button>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-};
+export default SearchResults;
