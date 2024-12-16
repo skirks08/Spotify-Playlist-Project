@@ -4,7 +4,7 @@ import "./App.css";
 import Playlist from "../Playlist/Playlist";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
-import Spotify from "jammming/src/Spotify.js";
+import Spotify from "../../Spotify";
 
 const App = () => {
   const [searchResults, setSearchResults] = useState([]);
