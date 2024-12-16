@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import "./App.css";
+import "./App.css"; 
 
 import Playlist from "../Playlist/Playlist";
 import SearchBar from "../SearchBar/SearchBar";
