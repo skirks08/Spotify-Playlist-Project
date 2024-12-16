@@ -2,7 +2,7 @@ import React from "react";
 
 import "./SearchResults.css";
 
-import TrackList from "../Tracklist";
+import TrackList from "../Tracklist/Tracklist";
 
 const SearchResults = (props) => {
   return (

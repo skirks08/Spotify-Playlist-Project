@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 
 import "./Playlist.css";
 
-import TrackList from "../Tracklist";
+import TrackList from "../Tracklist/Tracklist";
 
 const Playlist = (props) => {
   const handleNameChange = useCallback(
