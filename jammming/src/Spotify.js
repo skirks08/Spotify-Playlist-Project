@@ -1,5 +1,5 @@
 const clientId = '3da6d518fbe54b3fbf81d70afe5c4a44'; // Spotify app's client ID
-const redirectUri = 'http://localhost:3000/'; // app's redirect URI
+const redirectUri = 'https://skirks08.github.io/Spotify-Playlist-Project/'; // app's redirect URI
 let accessToken;
 
 const Spotify = {
