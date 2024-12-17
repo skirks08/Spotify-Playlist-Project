@@ -2,6 +2,7 @@
   "name": "jammming",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://skirks08.github.io/Spotify-Playlist-Project/",
   "dependencies": {
     "cra-template": "1.2.0",
     "react": "^19.0.0",
