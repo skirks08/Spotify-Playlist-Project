@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Spotify-Playlist-Project/static/css/main.5617538d.css",
-    "main.js": "/Spotify-Playlist-Project/static/js/main.a8578577.js",
-    "static/media/background_photo_desktop.jpg": "/Spotify-Playlist-Project/static/media/background_photo_desktop.a0687f3fe6f1303a2d18.jpg",
-    "index.html": "/Spotify-Playlist-Project/index.html",
-    "main.5617538d.css.map": "/Spotify-Playlist-Project/static/css/main.5617538d.css.map",
-    "main.a8578577.js.map": "/Spotify-Playlist-Project/static/js/main.a8578577.js.map"
+    "main.css": "/Spotify-Playlist-Project/jammming/static/css/main.4775df73.css",
+    "main.js": "/Spotify-Playlist-Project/jammming/static/js/main.67a53566.js",
+    "static/media/background_photo_desktop.jpg": "/Spotify-Playlist-Project/jammming/static/media/background_photo_desktop.a0687f3fe6f1303a2d18.jpg",
+    "index.html": "/Spotify-Playlist-Project/jammming/index.html",
+    "main.4775df73.css.map": "/Spotify-Playlist-Project/jammming/static/css/main.4775df73.css.map",
+    "main.67a53566.js.map": "/Spotify-Playlist-Project/jammming/static/js/main.67a53566.js.map"
   },
   "entrypoints": [
-    "static/css/main.5617538d.css",
-    "static/js/main.a8578577.js"
+    "static/css/main.4775df73.css",
+    "static/js/main.67a53566.js"
   ]
 }
